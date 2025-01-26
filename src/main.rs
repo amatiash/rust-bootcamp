@@ -1,3 +1,5 @@
+mod variables;
+
 fn main() {
-    println!("Hello, world!");
+    variables::fix_variable_definition();
 }
