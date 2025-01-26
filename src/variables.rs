@@ -19,3 +19,16 @@ pub fn fix_variable_definition_2() {
     x = 5; // don't change this line
     println!("Number {}", x);
 }
+
+pub fn fix_code_with_shadowing() {
+    // Fix this code with shadowing
+    // let x = "three"; // don't change this line
+    // println!("Spell a Number : {}", x);
+    // x = 3; // don't rename this variable
+    // println!("Number plus two is : {}", x + 2);
+
+    let x = "three"; // don't change this line
+    println!("Spell a Number : {}", x);
+    let x = 3; // don't rename this variable
+    println!("Number plus two is : {}", x + 2);
+}
