@@ -117,7 +117,7 @@ pub fn floating_point_numbers() {
     // What if we want to be more precise with our floating-point numbers?
 
     let pi15: f64 /* Give this variable a data type! */;
-    pi15 = 3.141592653589793;
+    pi15 = std::f64::consts::PI; // pi15 = 3.141592653589793;
     println!("Pi is {}, correct to 15 decimal places.", pi15);
 }
 
