@@ -2,9 +2,11 @@ mod variables;
 mod data_types;
 
 fn main() {
+    variables::code();
     variables::fix_variable_definition();
     variables::fix_variable_definition_2();
     variables::fix_code_with_shadowing();
+    data_types::code();
     data_types::boolean();
     data_types::unsigned_int();
     data_types::signed_int();
