@@ -1,5 +1,6 @@
 mod variables;
 mod data_types;
+mod constants_and_statics;
 
 fn main() {
     variables::code();
@@ -16,4 +17,7 @@ fn main() {
     data_types::arrays();
     data_types::tuples();
     data_types::type_aliasing();
+    constants_and_statics::code();
+    constants_and_statics::constants();
+    constants_and_statics::statics();
 }
