@@ -1,6 +1,7 @@
 mod variables;
 mod data_types;
 mod constants_and_statics;
+mod functions;
 
 fn main() {
     variables::code();
@@ -20,4 +21,8 @@ fn main() {
     constants_and_statics::code();
     constants_and_statics::constants();
     constants_and_statics::statics();
+    functions::code();
+    functions::definition();
+    functions::return_types();
+    functions::return_keyword();
 }
