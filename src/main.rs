@@ -1,7 +1,8 @@
-mod variables;
-mod data_types;
 mod constants_and_statics;
+mod control_flow;
+mod data_types;
 mod functions;
+mod variables;
 
 fn main() {
     variables::code();
@@ -25,4 +26,9 @@ fn main() {
     functions::definition();
     functions::return_types();
     functions::return_keyword();
+    control_flow::code();
+    control_flow::if_else();
+    control_flow::loop_task();
+    control_flow::while_task();
+    control_flow::for_task();
 }
