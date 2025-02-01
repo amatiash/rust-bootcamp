@@ -1,3 +1,4 @@
+mod comments;
 mod constants_and_statics;
 mod control_flow;
 mod data_types;
@@ -31,4 +32,5 @@ fn main() {
     control_flow::loop_task();
     control_flow::while_task();
     control_flow::for_task();
+    comments::code();
 }
