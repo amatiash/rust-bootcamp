@@ -4,6 +4,7 @@ mod control_flow;
 mod data_types;
 mod functions;
 mod variables;
+mod ownership;
 
 fn main() {
     variables::code();
@@ -33,4 +34,5 @@ fn main() {
     control_flow::while_task();
     control_flow::for_task();
     comments::code();
+    ownership::code();
 }
