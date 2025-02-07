@@ -35,4 +35,8 @@ fn main() {
     control_flow::for_task();
     comments::code();
     ownership::code();
+    ownership::moving_on_assignment();
+    ownership::moving_on_assignment2();
+    ownership::moving_into_function();
+    ownership::moving_out_of_function();
 }
