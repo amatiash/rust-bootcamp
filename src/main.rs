@@ -5,6 +5,7 @@ mod data_types;
 mod functions;
 mod variables;
 mod ownership;
+mod borrowing;
 
 fn main() {
     variables::code();
@@ -39,4 +40,9 @@ fn main() {
     ownership::moving_on_assignment_2();
     ownership::moving_into_function();
     ownership::moving_out_of_function();
+    borrowing::code();
+    borrowing::immutable_references();
+    borrowing::mutable_references_1();
+    borrowing::mutable_references_2();
+    borrowing::passing_by_reference();
 }
