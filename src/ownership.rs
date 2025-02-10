@@ -54,7 +54,7 @@ pub fn moving_on_assignment() {
     println!("String:\"{s1}\" is a substring of \"{s2}\"");
 }
 
-pub fn moving_on_assignment2() {
+pub fn moving_on_assignment_2() {
     // Fix the code so that it compiles. Modify only one statement.
     // let mut my_str = String::from("Example");
     // let mut temp;
