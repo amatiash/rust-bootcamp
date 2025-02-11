@@ -1,11 +1,12 @@
+mod borrowing;
 mod comments;
 mod constants_and_statics;
 mod control_flow;
 mod data_types;
 mod functions;
-mod variables;
 mod ownership;
-mod borrowing;
+mod slices;
+mod variables;
 
 fn main() {
     variables::code();
@@ -45,4 +46,7 @@ fn main() {
     borrowing::mutable_references_1();
     borrowing::mutable_references_2();
     borrowing::passing_by_reference();
+    slices::code();
+    slices::string_slice();
+    slices::array_slice();
 }
