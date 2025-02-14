@@ -7,6 +7,7 @@ mod functions;
 mod ownership;
 mod slices;
 mod variables;
+mod structs;
 
 fn main() {
     variables::code();
@@ -49,4 +50,8 @@ fn main() {
     slices::code();
     slices::string_slice();
     slices::array_slice();
+    structs::code();
+    structs::struct_definition();
+    structs::mutating_structs();
+    structs::structs_and_functions();
 }
