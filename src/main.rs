@@ -8,6 +8,7 @@ mod ownership;
 mod slices;
 mod variables;
 mod structs;
+mod implementation_blocks;
 
 fn main() {
     variables::code();
@@ -54,4 +55,7 @@ fn main() {
     structs::struct_definition();
     structs::mutating_structs();
     structs::structs_and_functions();
+    implementation_blocks::code();
+    implementation_blocks::methods();
+    implementation_blocks::associated_functions();
 }
