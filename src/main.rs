@@ -9,6 +9,7 @@ mod slices;
 mod variables;
 mod structs;
 mod implementation_blocks;
+mod tuple_structs;
 
 fn main() {
     variables::code();
@@ -58,4 +59,6 @@ fn main() {
     implementation_blocks::code();
     implementation_blocks::methods();
     implementation_blocks::associated_functions();
+    tuple_structs::code();
+    tuple_structs::definition();
 }
