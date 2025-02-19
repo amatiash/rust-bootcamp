@@ -3,13 +3,14 @@ mod comments;
 mod constants_and_statics;
 mod control_flow;
 mod data_types;
+mod enums;
 mod functions;
+mod implementation_blocks;
 mod ownership;
 mod slices;
-mod variables;
 mod structs;
-mod implementation_blocks;
 mod tuple_structs;
+mod variables;
 
 fn main() {
     variables::code();
@@ -61,4 +62,7 @@ fn main() {
     implementation_blocks::associated_functions();
     tuple_structs::code();
     tuple_structs::definition();
+    enums::code();
+    enums::definition_1();
+    enums::definition_2();
 }
