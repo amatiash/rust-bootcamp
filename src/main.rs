@@ -3,7 +3,7 @@ mod comments;
 mod constants_and_statics;
 mod control_flow;
 mod data_types;
-mod enums;
+mod enums_and_matching;
 mod functions;
 mod implementation_blocks;
 mod ownership;
@@ -62,7 +62,11 @@ fn main() {
     implementation_blocks::associated_functions();
     tuple_structs::code();
     tuple_structs::definition();
-    enums::code();
-    enums::definition_1();
-    enums::definition_2();
+    enums_and_matching::code();
+    enums_and_matching::definition_1();
+    enums_and_matching::definition_2();
+    enums_and_matching::exhaustive_requirement();
+    enums_and_matching::match_expression();
+    enums_and_matching::matching_on_enums_1();
+    enums_and_matching::matching_on_enums_2();
 }
