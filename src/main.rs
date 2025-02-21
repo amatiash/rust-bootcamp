@@ -11,6 +11,7 @@ mod slices;
 mod structs;
 mod tuple_structs;
 mod variables;
+mod option;
 
 fn main() {
     variables::code();
@@ -69,4 +70,8 @@ fn main() {
     enums_and_matching::match_expression();
     enums_and_matching::matching_on_enums_1();
     enums_and_matching::matching_on_enums_2();
+    option::code();
+    option::matching_option();
+    option::matching_option_2();
+    option::if_let();
 }
