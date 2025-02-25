@@ -6,12 +6,13 @@ mod data_types;
 mod enums_and_matching;
 mod functions;
 mod implementation_blocks;
+mod option_and_result;
 mod ownership;
 mod slices;
 mod structs;
 mod tuple_structs;
 mod variables;
-mod option_and_result;
+mod vectors;
 
 fn main() {
     variables::code();
@@ -76,4 +77,10 @@ fn main() {
     option_and_result::if_let();
     option_and_result::matching_result();
     option_and_result::returning_result();
+    vectors::code();
+    vectors::pushing();
+    vectors::removing();
+    vectors::fetching();
+    vectors::iterating();
+    vectors::iterating_and_mutation();
 }
