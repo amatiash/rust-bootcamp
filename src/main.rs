@@ -13,6 +13,7 @@ mod structs;
 mod tuple_structs;
 mod variables;
 mod vectors;
+mod modules;
 
 fn main() {
     variables::code();
@@ -83,4 +84,6 @@ fn main() {
     vectors::fetching();
     vectors::iterating();
     vectors::iterating_and_mutation();
+    modules::visibility();
+    modules::bringing_item_into_scope();
 }
