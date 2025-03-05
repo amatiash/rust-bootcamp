@@ -86,4 +86,7 @@ fn main() {
     vectors::iterating_and_mutation();
     modules::visibility();
     modules::bringing_item_into_scope();
+    modules::multi_file_projects_1();
+    modules::multi_file_projects_2();
+    modules::re_exporting();
 }
