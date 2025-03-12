@@ -6,10 +6,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/project_structure_overview/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/auth_service/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/structuring_larger_projects/draw/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/hello_world/target" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/project_structure_overview/target" />
       <excludeFolder url="file://$MODULE_DIR$/auth_service/target" />
+      <excludeFolder url="file://$MODULE_DIR$/structuring_larger_projects/draw/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -14,6 +14,7 @@ mod tuple_structs;
 mod variables;
 mod vectors;
 mod modules;
+mod unit_tests;
 
 fn main() {
     variables::code();
