@@ -15,6 +15,7 @@ mod variables;
 mod vectors;
 mod modules;
 mod unit_tests;
+mod generics;
 
 fn main() {
     variables::code();
@@ -90,4 +91,10 @@ fn main() {
     modules::multi_file_projects_1();
     modules::multi_file_projects_2();
     modules::re_exporting();
+    generics::code();
+    generics::generic_type_example();
+    generics::defining_generic_types_1();
+    generics::defining_generic_types_2();
+    generics::implementation_blocks();
+    generics::generic_functions()
 }

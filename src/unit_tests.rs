@@ -31,7 +31,7 @@ fn average(nums: &[i32]) -> i32 {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn you_can_assert() {
         assert!(true);
