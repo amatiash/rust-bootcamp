@@ -16,6 +16,7 @@ mod vectors;
 mod modules;
 mod unit_tests;
 mod generics;
+mod traits;
 
 fn main() {
     variables::code();
@@ -96,5 +97,6 @@ fn main() {
     generics::defining_generic_types_1();
     generics::defining_generic_types_2();
     generics::implementation_blocks();
-    generics::generic_functions()
+    generics::generic_functions();
+    traits::code();
 }
