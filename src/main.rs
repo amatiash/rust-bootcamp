@@ -99,4 +99,8 @@ fn main() {
     generics::implementation_blocks();
     generics::generic_functions();
     traits::code();
+    traits::implementing_traits_1();
+    traits::implementing_traits_2();
+    traits::default_implementations();
+    traits::overriding()
 }
