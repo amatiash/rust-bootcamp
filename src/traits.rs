@@ -255,6 +255,361 @@ pub fn overriding() {
     assert_eq!(String::from("Meow 🐱"), cat.message());
 }
 
+pub fn specifying_trait_bounds_1() {
+    // Complete the function signatures.
+    // trait Message {
+    //     fn message(&self) -> String {
+    //         "I love Rust 🦀".to_string()
+    //     }
+    // }
+    //
+    // fn print_msg1<T:>(input: &T) {
+    //     println!("{}", input.message());
+    // }
+    //
+    // fn print_msg2(input:) {
+    //     println!("{}", input.message());
+    // }
+    //
+    // fn print_msg3<T>(input: &T)
+    // where
+    // {
+    //     println!("{}", input.message());
+    // }
+    //
+    // struct Dummy;
+    //
+    // impl Message for Dummy {}
+    //
+    // let var = Dummy;
+    // print_msg1(&var);
+    // print_msg2(&var);
+    // print_msg3(&var);
+
+    trait Message {
+        fn message(&self) -> String {
+            "I love Rust 🦀".to_string()
+        }
+    }
+
+    fn print_msg1<T: Message>(input: &T) {
+        println!("{}", input.message());
+    }
+
+    fn print_msg2(input: &impl Message) {
+        println!("{}", input.message());
+    }
+
+    fn print_msg3<T>(input: &T)
+    where
+        T: Message,
+    {
+        println!("{}", input.message());
+    }
+
+    struct Dummy;
+
+    impl Message for Dummy {}
+
+    let var = Dummy;
+    print_msg1(&var);
+    print_msg2(&var);
+    print_msg3(&var);
+}
+
+pub fn specifying_trait_bounds_2() {
+    // Make the code compile by completing the function signature of `print_message`.
+    // trait Message {
+    //     fn message(&self) -> String {
+    //         "How are you?".to_string()
+    //     }
+    // }
+    //
+    // trait Printer {
+    //     fn print(&self, printable: &impl Message) {
+    //         println!("Message is: {}", printable.message());
+    //     }
+    // }
+    //
+    // struct M;
+    // struct P;
+    //
+    // impl Message for M {}
+    // impl Printer for P {}
+    //
+    // fn print_message<T, U>(msg, printer)
+    // where
+    // {
+    //     printer.print(msg);
+    // }
+    //
+    // let m = M;
+    // let p = P;
+    // print_message(&m, &p);
+
+    trait Message {
+        fn message(&self) -> String {
+            "How are you?".to_string()
+        }
+    }
+
+    trait Printer {
+        fn print(&self, printable: &impl Message) {
+            println!("Message is: {}", printable.message());
+        }
+    }
+
+    struct M;
+    struct P;
+
+    impl Message for M {}
+    impl Printer for P {}
+
+    fn print_message<T, U>(msg: &T, printer: &U)
+    where
+        U: Printer,
+        T: Message,
+    {
+        printer.print(msg);
+    }
+
+    let m = M;
+    let p = P;
+    print_message(&m, &p);
+}
+
+pub fn specifying_trait_bounds_3() {
+    // Complete the code so that it compiles.
+    // pub trait Licensed {
+    //     fn licensing_info(&self) -> String {
+    //         "some information".to_string()
+    //     }
+    // }
+    //
+    // struct SomeSoftware {}
+    //
+    // struct OtherSoftware {}
+    //
+    // impl Licensed for SomeSoftware {}
+    // impl Licensed for OtherSoftware {}
+    //
+    // // YOU MAY ONLY CHANGE THE NEXT LINE
+    // fn compare_license_types(software: ??, software_two: ??) -> bool {
+    //     software.licensing_info() == software_two.licensing_info()
+    // }
+}
+
+pub trait Licensed1 {
+    fn licensing_info(&self) -> String {
+        "some information".to_string()
+    }
+}
+
+struct SomeSoftware1 {}
+
+struct OtherSoftware1 {}
+
+impl Licensed1 for SomeSoftware1 {}
+impl Licensed1 for OtherSoftware1 {}
+
+// YOU MAY ONLY CHANGE THE NEXT LINE
+fn compare_license_types(software: impl Licensed1, software_two: impl Licensed1) -> bool {
+    software.licensing_info() == software_two.licensing_info()
+}
+
+pub fn multiple_trait_bounds_1() {
+    // Make the code compile by completing the function signature of `get_double_str`.
+    // trait Double {
+    //     fn double(&self) -> Self;
+    // }
+    //
+    // trait Printable {
+    //     fn convert_to_str(self) -> String;
+    // }
+    //
+    // fn get_double_str(input) -> String
+    // {
+    //     let doubled = input.double();
+    //     doubled.convert_to_str()
+    // }
+    //
+    // impl Double for i32 {
+    //     fn double(&self) -> Self {
+    //         2 * self
+    //     }
+    // }
+    //
+    // impl Printable for i32 {
+    //     fn convert_to_str(self) -> String {
+    //         format!("{self}")
+    //     }
+    // }
+    //
+    // let num = 22;
+    // let mut msg = format!("{num} doubled is ");
+    // msg.push_str(&get_double_str(num));
+    // println!("{msg}");
+
+    trait Double {
+        fn double(&self) -> Self;
+    }
+
+    trait Printable {
+        fn convert_to_str(self) -> String;
+    }
+
+    impl Double for i32 {
+        fn double(&self) -> Self {
+            2 * self
+        }
+    }
+
+    impl Printable for i32 {
+        fn convert_to_str(self) -> String {
+            format!("{self}")
+        }
+    }
+
+    fn get_double_str<T>(input: T) -> String
+    where
+        T: Double + Printable,
+    {
+        let doubled = input.double();
+        doubled.convert_to_str()
+    }
+
+    let num = 22;
+    let mut msg = format!("{num} doubled is ");
+    msg.push_str(&get_double_str(num));
+    println!("{msg}");
+}
+
+pub fn multiple_trait_bounds_2() {
+    // Complete the code so that it compiles.
+    // pub trait SomeTrait {
+    //     fn some_function(&self) -> bool {
+    //         true
+    //     }
+    // }
+    //
+    // pub trait OtherTrait {
+    //     fn other_function(&self) -> bool {
+    //         true
+    //     }
+    // }
+    //
+    // struct SomeStruct {}
+    // struct OtherStruct {}
+    //
+    // impl SomeTrait for SomeStruct {}
+    // impl OtherTrait for SomeStruct {}
+    // impl SomeTrait for OtherStruct {}
+    // impl OtherTrait for OtherStruct {}
+    //
+    // // YOU MAY ONLY CHANGE THE NEXT LINE
+    // fn some_func(item: ??) -> bool {
+    //     item.some_function() && item.other_function()
+    // }
+    //
+    // some_func(SomeStruct {});
+    // some_func(OtherStruct {});
+
+    pub trait SomeTrait {
+        fn some_function(&self) -> bool {
+            true
+        }
+    }
+
+    pub trait OtherTrait {
+        fn other_function(&self) -> bool {
+            true
+        }
+    }
+
+    struct SomeStruct {}
+    struct OtherStruct {}
+
+    impl SomeTrait for SomeStruct {}
+    impl OtherTrait for SomeStruct {}
+    impl SomeTrait for OtherStruct {}
+    impl OtherTrait for OtherStruct {}
+
+    // YOU MAY ONLY CHANGE THE NEXT LINE
+    fn some_func<T>(item: T) -> bool
+    where
+        T: SomeTrait + OtherTrait,
+    {
+        item.some_function() && item.other_function()
+    }
+
+    some_func(SomeStruct {});
+    some_func(OtherStruct {});
+}
+
+pub fn returning_trait_bounds() {
+    // Complete function signature of `get_bigger`.
+    // Only Addable trait's functions should be callable on its return value.
+    // trait Addable {
+    //     fn add_one(&self) -> Self;
+    //     fn are_equal(a: &Self, b: &Self) -> bool;
+    // }
+    //
+    // impl Addable for u8 {
+    //     fn add_one(&self) -> Self {
+    //         if *self == u8::MAX {
+    //             *self
+    //         } else {
+    //             self + 1
+    //         }
+    //     }
+    //     fn are_equal(a: &Self, b: &Self) -> bool {
+    //         a == b
+    //     }
+    // }
+    //
+    // fn get_bigger(a: u8, b: u8) -> {
+    //     if a > b {
+    //         a
+    //     } else {
+    //         b
+    //     }
+    // }
+    //
+    // let (num1, num2) = (125, 220);
+    // let bigger = get_bigger(num1, num2);
+    // if Addable::are_equal(&bigger, &bigger.add_one()) {
+    //     println!("Bigger number has max value")
+    // } else {
+    //     println!("Both numbers are smaller than max value");
+    // }
+
+    trait Addable {
+        fn add_one(&self) -> Self;
+        fn are_equal(a: &Self, b: &Self) -> bool;
+    }
+
+    impl Addable for u8 {
+        fn add_one(&self) -> Self {
+            if *self == u8::MAX { *self } else { self + 1 }
+        }
+        fn are_equal(a: &Self, b: &Self) -> bool {
+            a == b
+        }
+    }
+
+    fn get_bigger(a: u8, b: u8) -> impl Addable {
+        if a > b { a } else { b }
+    }
+
+    let (num1, num2) = (125, 220);
+    let bigger = get_bigger(num1, num2);
+    if Addable::are_equal(&bigger, &bigger.add_one()) {
+        println!("Bigger number has max value")
+    } else {
+        println!("Both numbers are smaller than max value");
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -288,5 +643,21 @@ mod tests {
         };
         assert_eq!(some_software.licensing_info(), licensing_info);
         assert_eq!(other_software.licensing_info(), licensing_info);
+    }
+
+    #[test]
+    fn compare_license_information() {
+        let some_software = SomeSoftware1 {};
+        let other_software = OtherSoftware1 {};
+
+        assert!(compare_license_types(some_software, other_software));
+    }
+
+    #[test]
+    fn compare_license_information_backwards() {
+        let some_software = SomeSoftware1 {};
+        let other_software = OtherSoftware1 {};
+
+        assert!(compare_license_types(other_software, some_software));
     }
 }

@@ -102,5 +102,11 @@ fn main() {
     traits::implementing_traits_1();
     traits::implementing_traits_2();
     traits::default_implementations();
-    traits::overriding()
+    traits::overriding();
+    traits::specifying_trait_bounds_1();
+    traits::specifying_trait_bounds_2();
+    traits::specifying_trait_bounds_3();
+    traits::multiple_trait_bounds_1();
+    traits::multiple_trait_bounds_2();
+    traits::returning_trait_bounds();
 }
