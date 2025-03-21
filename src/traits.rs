@@ -470,7 +470,7 @@ pub fn multiple_trait_bounds_1() {
         }
     }
 
-    fn get_double_str<T>(input: T) -> String
+    fn get_double_str<T>(input: T) -> String // Can also be: fn get_double_str(input: impl Double+Printable) -> String
     where
         T: Double + Printable,
     {
