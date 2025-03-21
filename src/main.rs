@@ -17,6 +17,7 @@ mod modules;
 mod unit_tests;
 mod generics;
 mod traits;
+mod supertraits;
 
 fn main() {
     variables::code();
@@ -109,4 +110,7 @@ fn main() {
     traits::multiple_trait_bounds_1();
     traits::multiple_trait_bounds_2();
     traits::returning_trait_bounds();
+    supertraits::code();
+    supertraits::implementing_supertraits();
+    supertraits::multiple_supertraits();
 }
