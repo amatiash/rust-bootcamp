@@ -18,6 +18,7 @@ mod unit_tests;
 mod generics;
 mod traits;
 mod supertraits;
+mod trait_objects;
 
 fn main() {
     variables::code();
@@ -113,4 +114,7 @@ fn main() {
     supertraits::code();
     supertraits::implementing_supertraits();
     supertraits::multiple_supertraits();
+    trait_objects::code();
+    trait_objects::returning_and_passing_to_functions();
+    trait_objects::trait_objects_vectors();
 }
