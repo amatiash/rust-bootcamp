@@ -19,6 +19,7 @@ mod generics;
 mod traits;
 mod supertraits;
 mod trait_objects;
+mod deriving_traits;
 
 fn main() {
     variables::code();
@@ -117,4 +118,7 @@ fn main() {
     trait_objects::code();
     trait_objects::returning_and_passing_to_functions();
     trait_objects::trait_objects_vectors();
+    deriving_traits::code();
+    deriving_traits::deriving_on_structs();
+    deriving_traits::deriving_on_enums();
 }
