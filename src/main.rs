@@ -20,6 +20,7 @@ mod traits;
 mod supertraits;
 mod trait_objects;
 mod deriving_traits;
+mod concrete_lifetimes;
 
 fn main() {
     variables::code();
@@ -121,4 +122,8 @@ fn main() {
     deriving_traits::code();
     deriving_traits::deriving_on_structs();
     deriving_traits::deriving_on_enums();
+    concrete_lifetimes::code();
+    concrete_lifetimes::lifetimes_of_owned_values();
+    concrete_lifetimes::dangling_references();
+    concrete_lifetimes::non_lexical_lifetimes();
 }
