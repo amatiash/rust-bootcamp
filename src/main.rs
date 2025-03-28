@@ -21,6 +21,7 @@ mod supertraits;
 mod trait_objects;
 mod deriving_traits;
 mod concrete_lifetimes;
+mod generic_lifetimes;
 
 fn main() {
     variables::code();
@@ -126,4 +127,7 @@ fn main() {
     concrete_lifetimes::lifetimes_of_owned_values();
     concrete_lifetimes::dangling_references();
     concrete_lifetimes::non_lexical_lifetimes();
+    generic_lifetimes::code();
+    generic_lifetimes::helping_the_borrow_checker();
+    generic_lifetimes::complying_with_the_borrow_checker();
 }
