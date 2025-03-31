@@ -22,6 +22,7 @@ mod trait_objects;
 mod deriving_traits;
 mod concrete_lifetimes;
 mod generic_lifetimes;
+mod structs_and_lifetime_elision;
 
 fn main() {
     variables::code();
@@ -130,4 +131,8 @@ fn main() {
     generic_lifetimes::code();
     generic_lifetimes::helping_the_borrow_checker();
     generic_lifetimes::complying_with_the_borrow_checker();
+    structs_and_lifetime_elision::code();
+    structs_and_lifetime_elision::lifetimes_in_structs();
+    structs_and_lifetime_elision::lifetime_elision();
+
 }
