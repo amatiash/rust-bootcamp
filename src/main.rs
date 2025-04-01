@@ -1,28 +1,29 @@
 mod borrowing;
+mod box_smart_pointer;
 mod comments;
+mod concrete_lifetimes;
 mod constants_and_statics;
 mod control_flow;
 mod data_types;
+mod deriving_traits;
 mod enums_and_matching;
 mod functions;
+mod generic_lifetimes;
+mod generics;
 mod implementation_blocks;
+mod modules;
 mod option_and_result;
 mod ownership;
 mod slices;
 mod structs;
-mod tuple_structs;
-mod variables;
-mod vectors;
-mod modules;
-mod unit_tests;
-mod generics;
-mod traits;
+mod structs_and_lifetime_elision;
 mod supertraits;
 mod trait_objects;
-mod deriving_traits;
-mod concrete_lifetimes;
-mod generic_lifetimes;
-mod structs_and_lifetime_elision;
+mod traits;
+mod tuple_structs;
+mod unit_tests;
+mod variables;
+mod vectors;
 
 fn main() {
     variables::code();
@@ -134,5 +135,7 @@ fn main() {
     structs_and_lifetime_elision::code();
     structs_and_lifetime_elision::lifetimes_in_structs();
     structs_and_lifetime_elision::lifetime_elision();
-
+    box_smart_pointer::code();
+    box_smart_pointer::creation();
+    box_smart_pointer::recursive_types();
 }
