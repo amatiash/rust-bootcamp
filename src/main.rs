@@ -24,6 +24,7 @@ mod tuple_structs;
 mod unit_tests;
 mod variables;
 mod vectors;
+mod rc_smart_pointer;
 
 fn main() {
     variables::code();
@@ -138,4 +139,8 @@ fn main() {
     box_smart_pointer::code();
     box_smart_pointer::creation();
     box_smart_pointer::recursive_types();
+    rc_smart_pointer::code();
+    rc_smart_pointer::counting_refs_1();
+    rc_smart_pointer::counting_refs_2();
+
 }
