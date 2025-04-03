@@ -14,6 +14,8 @@ mod implementation_blocks;
 mod modules;
 mod option_and_result;
 mod ownership;
+mod rc_smart_pointer;
+mod refcell_smart_pointer;
 mod slices;
 mod structs;
 mod structs_and_lifetime_elision;
@@ -24,7 +26,6 @@ mod tuple_structs;
 mod unit_tests;
 mod variables;
 mod vectors;
-mod rc_smart_pointer;
 
 fn main() {
     variables::code();
@@ -142,5 +143,7 @@ fn main() {
     rc_smart_pointer::code();
     rc_smart_pointer::counting_refs_1();
     rc_smart_pointer::counting_refs_2();
-
+    refcell_smart_pointer::code();
+    refcell_smart_pointer::borrowing();
+    refcell_smart_pointer::interior_mutability();
 }
