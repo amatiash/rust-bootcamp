@@ -5,6 +5,7 @@ mod concrete_lifetimes;
 mod constants_and_statics;
 mod control_flow;
 mod data_types;
+mod deref_coercion;
 mod deriving_traits;
 mod enums_and_matching;
 mod functions;
@@ -146,4 +147,8 @@ fn main() {
     refcell_smart_pointer::code();
     refcell_smart_pointer::borrowing();
     refcell_smart_pointer::interior_mutability();
+    deref_coercion::code();
+    deref_coercion::example();
+    deref_coercion::deref_and_deref_mut();
+    deref_coercion::shared_ownership_with_mutability();
 }
