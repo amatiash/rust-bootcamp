@@ -25,6 +25,7 @@ mod trait_objects;
 mod traits;
 mod tuple_structs;
 mod unit_tests;
+mod unrecoverable_errors;
 mod variables;
 mod vectors;
 
@@ -151,4 +152,6 @@ fn main() {
     deref_coercion::example();
     deref_coercion::deref_and_deref_mut();
     deref_coercion::shared_ownership_with_mutability();
+    unrecoverable_errors::code();
+    unrecoverable_errors::panicking();
 }
