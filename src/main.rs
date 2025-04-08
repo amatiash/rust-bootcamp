@@ -28,6 +28,7 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
+mod recoverable_errors;
 
 fn main() {
     variables::code();
@@ -154,4 +155,9 @@ fn main() {
     deref_coercion::shared_ownership_with_mutability();
     unrecoverable_errors::code();
     unrecoverable_errors::panicking();
+    recoverable_errors::code();
+    recoverable_errors::returning_result_1();
+    recoverable_errors::returning_result_2();
+    recoverable_errors::returning_result_3();
+    recoverable_errors::unwrapping();
 }
