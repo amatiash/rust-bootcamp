@@ -29,6 +29,7 @@ mod unrecoverable_errors;
 mod variables;
 mod vectors;
 mod recoverable_errors;
+mod propagating_errors;
 
 fn main() {
     variables::code();
@@ -160,4 +161,8 @@ fn main() {
     recoverable_errors::returning_result_2();
     recoverable_errors::returning_result_3();
     recoverable_errors::unwrapping();
+    propagating_errors::code();
+    propagating_errors::propagating_errors_1();
+    propagating_errors::propagating_errors_2();
+
 }
