@@ -30,6 +30,7 @@ mod variables;
 mod vectors;
 mod recoverable_errors;
 mod propagating_errors;
+mod result_and_option;
 
 fn main() {
     variables::code();
@@ -164,5 +165,8 @@ fn main() {
     propagating_errors::code();
     propagating_errors::propagating_errors_1();
     propagating_errors::propagating_errors_2();
+    result_and_option::code();
+    result_and_option::option_to_result();
+    result_and_option::result_to_option();
 
 }
