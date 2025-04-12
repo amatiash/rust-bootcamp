@@ -13,10 +13,14 @@ mod generic_lifetimes;
 mod generics;
 mod implementation_blocks;
 mod modules;
+mod multiple_error_types;
 mod option_and_result;
 mod ownership;
+mod propagating_errors;
 mod rc_smart_pointer;
+mod recoverable_errors;
 mod refcell_smart_pointer;
+mod result_and_option;
 mod slices;
 mod structs;
 mod structs_and_lifetime_elision;
@@ -28,9 +32,6 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
-mod recoverable_errors;
-mod propagating_errors;
-mod result_and_option;
 
 fn main() {
     variables::code();
@@ -168,5 +169,8 @@ fn main() {
     result_and_option::code();
     result_and_option::option_to_result();
     result_and_option::result_to_option();
-
+    multiple_error_types::code();
+    multiple_error_types::error_trait_object().expect("This shall pass");
+    multiple_error_types::multiple_errors_1();
+    multiple_error_types::multiple_errors_2();
 }
