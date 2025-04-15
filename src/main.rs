@@ -1,3 +1,4 @@
+mod basic_error_handling;
 mod borrowing;
 mod box_smart_pointer;
 mod comments;
@@ -173,4 +174,7 @@ fn main() {
     multiple_error_types::error_trait_object().expect("This shall pass");
     multiple_error_types::multiple_errors_1();
     multiple_error_types::multiple_errors_2();
+    basic_error_handling::code();
+    basic_error_handling::avoiding_unwrap();
+    basic_error_handling::error_propagating();
 }
