@@ -5,6 +5,7 @@ mod comments;
 mod concrete_lifetimes;
 mod constants_and_statics;
 mod control_flow;
+mod custom_errors_1;
 mod data_types;
 mod deref_coercion;
 mod deriving_traits;
@@ -177,4 +178,6 @@ fn main() {
     basic_error_handling::code();
     basic_error_handling::avoiding_unwrap();
     basic_error_handling::error_propagating();
+    custom_errors_1::code();
+    custom_errors_1::creating_custom_errors();
 }

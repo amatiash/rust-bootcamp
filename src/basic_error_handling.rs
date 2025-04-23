@@ -160,8 +160,8 @@ pub fn error_propagating() {
         Ok(())
     }
 
-    let n = 13;
-    if let Err(err) = print_factorial(n) {
-        eprintln!("Error calculating factorial of {}: {}", n, err);
-    }
+    // let n = 13;
+    // if let Err(err) = print_factorial(n) {
+    //     eprintln!("Error calculating factorial of {}: {}", n, err);
+    // }
 }
