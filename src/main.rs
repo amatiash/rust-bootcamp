@@ -6,6 +6,7 @@ mod concrete_lifetimes;
 mod constants_and_statics;
 mod control_flow;
 mod custom_errors_1;
+mod custom_errors_2;
 mod data_types;
 mod deref_coercion;
 mod deriving_traits;
@@ -180,4 +181,8 @@ fn main() {
     basic_error_handling::error_propagating();
     custom_errors_1::code();
     custom_errors_1::creating_custom_errors();
+    custom_errors_2::code();
+    custom_errors_2::converting_errors_1();
+    custom_errors_2::converting_errors_2();
+    custom_errors_2::error_trait();
 }
