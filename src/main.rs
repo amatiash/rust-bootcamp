@@ -35,6 +35,7 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
+mod custom_errors_3;
 
 fn main() {
     variables::code();
@@ -185,4 +186,6 @@ fn main() {
     custom_errors_2::converting_errors_1();
     custom_errors_2::converting_errors_2();
     custom_errors_2::error_trait();
+    custom_errors_3::code();
+    custom_errors_3::error_trait();
 }
