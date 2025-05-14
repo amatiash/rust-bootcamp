@@ -7,10 +7,13 @@ mod constants_and_statics;
 mod control_flow;
 mod custom_errors_1;
 mod custom_errors_2;
+mod custom_errors_3;
+mod custom_errors_4;
 mod data_types;
 mod deref_coercion;
 mod deriving_traits;
 mod enums_and_matching;
+mod error_stack;
 mod functions;
 mod generic_lifetimes;
 mod generics;
@@ -35,8 +38,6 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
-mod custom_errors_3;
-mod custom_errors_4;
 
 fn main() {
     variables::code();
@@ -190,4 +191,5 @@ fn main() {
     custom_errors_3::code();
     custom_errors_3::error_trait();
     custom_errors_4::code();
+    error_stack::code();
 }
