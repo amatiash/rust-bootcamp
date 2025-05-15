@@ -1,6 +1,7 @@
 mod basic_error_handling;
 mod borrowing;
 mod box_smart_pointer;
+mod closures;
 mod comments;
 mod concrete_lifetimes;
 mod constants_and_statics;
@@ -192,4 +193,9 @@ fn main() {
     custom_errors_3::error_trait();
     custom_errors_4::code();
     error_stack::code();
+    closures::code();
+    closures::defining_closures();
+    closures::struct_fields();
+    closures::mutably_capturing_environment();
+    closures::moving_into_closures();
 }
