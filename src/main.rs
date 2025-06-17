@@ -198,4 +198,7 @@ fn main() {
     closures::struct_fields();
     closures::mutably_capturing_environment();
     closures::moving_into_closures();
+    closures::passing_to_functions();
+    closures::returning_from_functions_1();
+    closures::returning_from_functions_2();
 }
