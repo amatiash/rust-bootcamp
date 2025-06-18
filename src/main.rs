@@ -39,6 +39,7 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
+mod function_pointers;
 
 fn main() {
     variables::code();
@@ -201,4 +202,7 @@ fn main() {
     closures::passing_to_functions();
     closures::returning_from_functions_1();
     closures::returning_from_functions_2();
+    function_pointers::code();
+    function_pointers::as_parameters();
+    function_pointers::coercing_from_closures();
 }
