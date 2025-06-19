@@ -40,6 +40,7 @@ mod unrecoverable_errors;
 mod variables;
 mod vectors;
 mod function_pointers;
+mod iterator_pattern;
 
 fn main() {
     variables::code();
@@ -205,4 +206,6 @@ fn main() {
     function_pointers::code();
     function_pointers::as_parameters();
     function_pointers::coercing_from_closures();
+    iterator_pattern::code();
+    iterator_pattern::iterator_trait();
 }
