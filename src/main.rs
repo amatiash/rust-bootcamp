@@ -15,10 +15,13 @@ mod deref_coercion;
 mod deriving_traits;
 mod enums_and_matching;
 mod error_stack;
+mod function_pointers;
 mod functions;
 mod generic_lifetimes;
 mod generics;
 mod implementation_blocks;
+mod implementing_iterator_traits;
+mod iterator_pattern;
 mod modules;
 mod multiple_error_types;
 mod option_and_result;
@@ -39,8 +42,6 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
-mod function_pointers;
-mod iterator_pattern;
 
 fn main() {
     variables::code();
@@ -208,4 +209,7 @@ fn main() {
     function_pointers::coercing_from_closures();
     iterator_pattern::code();
     iterator_pattern::iterator_trait();
+    implementing_iterator_traits::code();
+    implementing_iterator_traits::into_iterator_1();
+    implementing_iterator_traits::into_iterator_2();
 }
