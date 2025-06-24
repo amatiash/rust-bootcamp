@@ -21,6 +21,7 @@ mod generic_lifetimes;
 mod generics;
 mod implementation_blocks;
 mod implementing_iterator_traits;
+mod iterating_over_collections;
 mod iterator_pattern;
 mod modules;
 mod multiple_error_types;
@@ -212,4 +213,8 @@ fn main() {
     implementing_iterator_traits::code();
     implementing_iterator_traits::into_iterator_1();
     implementing_iterator_traits::into_iterator_2();
+    iterating_over_collections::code();
+    iterating_over_collections::iterating_immutably();
+    iterating_over_collections::iterating_mutably();
+    iterating_over_collections::hashmaps();
 }
