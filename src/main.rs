@@ -2,6 +2,7 @@ mod basic_error_handling;
 mod borrowing;
 mod box_smart_pointer;
 mod closures;
+mod combinators;
 mod comments;
 mod concrete_lifetimes;
 mod constants_and_statics;
@@ -217,4 +218,5 @@ fn main() {
     iterating_over_collections::iterating_immutably();
     iterating_over_collections::iterating_mutably();
     iterating_over_collections::hashmaps();
+    combinators::code();
 }
