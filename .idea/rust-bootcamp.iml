@@ -8,12 +8,14 @@
       <sourceFolder url="file://$MODULE_DIR$/auth_service/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/structuring_larger_projects/draw/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/orphan_rule/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cli/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/hello_world/target" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/project_structure_overview/target" />
       <excludeFolder url="file://$MODULE_DIR$/auth_service/target" />
       <excludeFolder url="file://$MODULE_DIR$/structuring_larger_projects/draw/target" />
       <excludeFolder url="file://$MODULE_DIR$/orphan_rule/target" />
+      <excludeFolder url="file://$MODULE_DIR$/cli/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects" />
     </content>
     <orderEntry type="inheritedJdk" />
