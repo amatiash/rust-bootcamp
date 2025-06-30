@@ -27,9 +27,9 @@ impl Page for HomePage {
         let db_state = self.db.read_db()?;
 
         for (id, epic) in db_state.epics.iter().sorted_by_key(|(id, _)| *id) {
-            let id_col = get_column_string(&id.to_string(), 11);
-            let name_col = get_column_string(&epic.name, 32);
-            let status_col = get_column_string(&epic.status.to_string(), 17);
+            let id_col = get_column_string(&id.to_string(), 12);
+            let name_col = get_column_string(&epic.name, 34);
+            let status_col = get_column_string(&epic.status.to_string(), 18);
 
             println!("{}|{}|{}", id_col, name_col, status_col);
         }
@@ -82,10 +82,10 @@ impl Page for EpicDetail {
         println!("------------------------------ EPIC ------------------------------");
         println!("  id  |     name     |         description         |    status    ");
 
-        let id_col = get_column_string(&self.epic_id.to_string(), 5);
-        let name_col = get_column_string(&epic.name, 13);
-        let desc_col = get_column_string(&epic.description, 27);
-        let status_col = get_column_string(&epic.status.to_string(), 13);
+        let id_col = get_column_string(&self.epic_id.to_string(), 6);
+        let name_col = get_column_string(&epic.name, 14);
+        let desc_col = get_column_string(&epic.description, 29);
+        let status_col = get_column_string(&epic.status.to_string(), 14);
 
         println!("{}|{}|{}|{}", id_col, name_col, desc_col, status_col);
 
@@ -98,9 +98,9 @@ impl Page for EpicDetail {
 
         for story_id in epic.stories.iter().sorted() {
             if let Some(story) = stories.get(story_id) {
-                let id_col = get_column_string(&story_id.to_string(), 11);
-                let name_col = get_column_string(&story.name, 32);
-                let status_col = get_column_string(&story.status.to_string(), 17);
+                let id_col = get_column_string(&story_id.to_string(), 12);
+                let name_col = get_column_string(&story.name, 34);
+                let status_col = get_column_string(&story.status.to_string(), 18);
 
                 println!("{}|{}|{}", id_col, name_col, status_col);
             }
@@ -172,10 +172,10 @@ impl Page for StoryDetail {
         println!("------------------------------ STORY ------------------------------");
         println!("  id  |     name     |         description         |    status    ");
 
-        let id_col = get_column_string(&self.story_id.to_string(), 5);
-        let name_col = get_column_string(&story.name, 13);
-        let desc_col = get_column_string(&story.description, 27);
-        let status_col = get_column_string(&story.status.to_string(), 13);
+        let id_col = get_column_string(&self.story_id.to_string(), 6);
+        let name_col = get_column_string(&story.name, 14);
+        let desc_col = get_column_string(&story.description, 29);
+        let status_col = get_column_string(&story.status.to_string(), 14);
 
         println!("{}|{}|{}|{}", id_col, name_col, desc_col, status_col);
 
