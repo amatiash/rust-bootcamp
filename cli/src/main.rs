@@ -37,30 +37,35 @@ fn main() {
             continue;
         }
 
-        // Get user input
-        let input = get_user_input();
+        // Input loop - keep asking for input until we get a valid action
+        loop {
+            // Get user input
+            let input = get_user_input();
 
-        // Pass input to page's input handler
-        let action = match current_page.handle_input(&input) {
-            Ok(Some(action)) => action,
-            Ok(None) => continue, // No action to process, continue to next iteration
-            Err(error) => {
-                println!(
-                    "Error handling input: {}\nPress any key to continue...",
-                    error
-                );
-                wait_for_key_press();
-                continue;
+            // Pass input to page's input handler
+            match current_page.handle_input(input.trim()) {
+                Ok(Some(action)) => {
+                    if let Err(error) = navigator.handle_action(action) {
+                        println!(
+                            "Error processing action: {}\nPress any key to continue...",
+                            error
+                        );
+                        wait_for_key_press();
+                    }
+                    break;
+                }
+                Ok(None) => {
+                    continue;
+                }
+                Err(error) => {
+                    println!(
+                        "Error handling input: {}\nPress any key to continue...",
+                        error
+                    );
+                    wait_for_key_press();
+                    continue;
+                }
             }
-        };
-
-        // Let the navigator process the action
-        if let Err(error) = navigator.handle_action(action) {
-            println!(
-                "Error processing action: {}\nPress any key to continue...",
-                error
-            );
-            wait_for_key_press();
         }
     }
 }
