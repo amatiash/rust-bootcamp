@@ -44,6 +44,7 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
+mod creating_threads;
 
 fn main() {
     variables::code();
@@ -219,4 +220,8 @@ fn main() {
     iterating_over_collections::iterating_mutably();
     iterating_over_collections::hashmaps();
     combinators::code();
+    creating_threads::code();
+    creating_threads::joining_1();
+    creating_threads::joining_2();
+    creating_threads::sleeping();
 }
