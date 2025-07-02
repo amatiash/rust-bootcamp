@@ -46,6 +46,7 @@ mod variables;
 mod vectors;
 mod creating_threads;
 mod moving_values_into_threads;
+mod message_passing_between_threads;
 
 fn main() {
     variables::code();
@@ -227,4 +228,7 @@ fn main() {
     creating_threads::sleeping();
     moving_values_into_threads::code();
     moving_values_into_threads::moving();
+    message_passing_between_threads::code();
+    message_passing_between_threads::message_passing_1();
+    message_passing_between_threads::message_passing_2();
 }
