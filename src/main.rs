@@ -47,6 +47,7 @@ mod vectors;
 mod creating_threads;
 mod moving_values_into_threads;
 mod message_passing_between_threads;
+mod sharing_state_between_threads;
 
 fn main() {
     variables::code();
@@ -231,4 +232,7 @@ fn main() {
     message_passing_between_threads::code();
     message_passing_between_threads::message_passing_1();
     message_passing_between_threads::message_passing_2();
+    sharing_state_between_threads::code();
+    sharing_state_between_threads::acquiring_locks();
+    sharing_state_between_threads::atomic_ref_count();
 }
