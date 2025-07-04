@@ -40,6 +40,7 @@ mod refcell_smart_pointer;
 mod result_and_option;
 mod sharing_state_between_threads;
 mod slices;
+mod streams;
 mod structs;
 mod structs_and_lifetime_elision;
 mod supertraits;
@@ -243,4 +244,5 @@ async fn main() {
     async_basics::awaiting().await;
     async_basics::creating_executor().await;
     cpu_intensive_code::code();
+    streams::code();
 }
