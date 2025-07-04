@@ -49,6 +49,7 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
+mod tokio_tasks;
 
 #[tokio::main]
 async fn main() {
