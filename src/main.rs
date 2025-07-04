@@ -1,3 +1,4 @@
+mod async_basics;
 mod basic_error_handling;
 mod borrowing;
 mod box_smart_pointer;
@@ -7,6 +8,7 @@ mod comments;
 mod concrete_lifetimes;
 mod constants_and_statics;
 mod control_flow;
+mod creating_threads;
 mod custom_errors_1;
 mod custom_errors_2;
 mod custom_errors_3;
@@ -24,7 +26,9 @@ mod implementation_blocks;
 mod implementing_iterator_traits;
 mod iterating_over_collections;
 mod iterator_pattern;
+mod message_passing_between_threads;
 mod modules;
+mod moving_values_into_threads;
 mod multiple_error_types;
 mod option_and_result;
 mod ownership;
@@ -33,6 +37,7 @@ mod rc_smart_pointer;
 mod recoverable_errors;
 mod refcell_smart_pointer;
 mod result_and_option;
+mod sharing_state_between_threads;
 mod slices;
 mod structs;
 mod structs_and_lifetime_elision;
@@ -44,12 +49,9 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
-mod creating_threads;
-mod moving_values_into_threads;
-mod message_passing_between_threads;
-mod sharing_state_between_threads;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     variables::code();
     variables::fix_variable_definition();
     variables::fix_variable_definition_2();
@@ -235,4 +237,7 @@ fn main() {
     sharing_state_between_threads::code();
     sharing_state_between_threads::acquiring_locks();
     sharing_state_between_threads::atomic_ref_count();
+    async_basics::code();
+    async_basics::awaiting().await;
+    async_basics::creating_executor().await;
 }
