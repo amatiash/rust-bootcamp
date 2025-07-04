@@ -8,6 +8,7 @@ mod comments;
 mod concrete_lifetimes;
 mod constants_and_statics;
 mod control_flow;
+mod cpu_intensive_code;
 mod creating_threads;
 mod custom_errors_1;
 mod custom_errors_2;
@@ -42,6 +43,7 @@ mod slices;
 mod structs;
 mod structs_and_lifetime_elision;
 mod supertraits;
+mod tokio_tasks;
 mod trait_objects;
 mod traits;
 mod tuple_structs;
@@ -49,7 +51,6 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
-mod tokio_tasks;
 
 #[tokio::main]
 async fn main() {
@@ -241,4 +242,5 @@ async fn main() {
     async_basics::code();
     async_basics::awaiting().await;
     async_basics::creating_executor().await;
+    cpu_intensive_code::code();
 }
