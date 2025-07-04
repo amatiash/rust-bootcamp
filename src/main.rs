@@ -15,6 +15,7 @@ mod custom_errors_2;
 mod custom_errors_3;
 mod custom_errors_4;
 mod data_types;
+mod declarative_macros;
 mod deref_coercion;
 mod deriving_traits;
 mod enums_and_matching;
@@ -245,4 +246,8 @@ async fn main() {
     async_basics::creating_executor().await;
     cpu_intensive_code::code();
     streams::code();
+    declarative_macros::code();
+    declarative_macros::introduction();
+    declarative_macros::scope_1();
+    declarative_macros::scope_2();
 }
