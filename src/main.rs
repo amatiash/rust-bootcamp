@@ -250,4 +250,7 @@ async fn main() {
     declarative_macros::introduction();
     declarative_macros::scope_1();
     declarative_macros::scope_2();
+    declarative_macros::multiple_matchers_1();
+    declarative_macros::repetition();
+    declarative_macros::multiple_matchers_2();
 }
