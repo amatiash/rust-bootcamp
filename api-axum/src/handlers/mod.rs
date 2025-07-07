@@ -1,7 +1,7 @@
 mod handlers_inner;
 
-use crate::{models::*, AppState};
-use axum::{Json, response::IntoResponse, extract::State};
+use crate::{AppState, models::*};
+use axum::{Json, extract::State, response::IntoResponse};
 
 // ---- CRUD for Questions ----
 
@@ -20,7 +20,8 @@ pub async fn create_question(
     Json(question)
 }
 
-pub async fn read_questions(// TODO: add questions_dao from app state as an argument
+pub async fn read_questions(
+    State(AppState { questions_dao, .. }): State<AppState>,
 ) -> impl IntoResponse {
     let question = QuestionDetail {
         question_uuid: "d347261c-3f0e-42d2-8706-5ef9f1b96725".to_string(),
@@ -33,7 +34,7 @@ pub async fn read_questions(// TODO: add questions_dao from app state as an argu
 }
 
 pub async fn delete_question(
-    // TODO: add questions_dao from app state as an argument
+    State(AppState { questions_dao, .. }): State<AppState>,
     Json(question_uuid): Json<QuestionId>,
 ) {
     // ...
@@ -57,7 +58,7 @@ pub async fn create_answer(
 }
 
 pub async fn read_answers(
-    // TODO: add answers_dao from app state as an argument
+    State(AppState { answers_dao, .. }): State<AppState>,
     Json(question_uuid): Json<QuestionId>,
 ) -> impl IntoResponse {
     let answer = AnswerDetail {
@@ -71,7 +72,7 @@ pub async fn read_answers(
 }
 
 pub async fn delete_answer(
-    // TODO: add answers_dao from app state as an argument
+    State(AppState { answers_dao, .. }): State<AppState>,
     Json(answer_uuid): Json<AnswerId>,
 ) {
     // ...
