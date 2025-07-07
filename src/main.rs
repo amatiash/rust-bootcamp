@@ -53,6 +53,7 @@ mod unit_tests;
 mod unrecoverable_errors;
 mod variables;
 mod vectors;
+mod raw_pointers;
 
 #[tokio::main]
 async fn main() {
@@ -253,4 +254,8 @@ async fn main() {
     declarative_macros::multiple_matchers_1();
     declarative_macros::repetition();
     declarative_macros::multiple_matchers_2();
+    raw_pointers::code();
+    raw_pointers::immutable_raw_pointers();
+    raw_pointers::mutable_raw_pointers();
+    raw_pointers::multiple_pointers();
 }
