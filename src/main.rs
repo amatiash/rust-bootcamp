@@ -55,6 +55,7 @@ mod variables;
 mod vectors;
 mod raw_pointers;
 mod unsafe_functions;
+mod unsafe_traits;
 
 #[tokio::main]
 async fn main() {
@@ -262,4 +263,6 @@ async fn main() {
     unsafe_functions::code();
     unsafe_functions::unsafe_functions();
     unsafe_functions::unsafe_methods();
+    unsafe_traits::code();
+    unsafe_traits::unsafe_traits();
 }
