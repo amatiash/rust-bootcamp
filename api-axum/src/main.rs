@@ -1,20 +1,27 @@
-use log::info;
-use sqlx::postgres::PgPoolOptions;
+#[macro_use]
+extern crate log;
+
+extern crate pretty_env_logger;
 
 use axum::{
     Router,
     routing::{delete, get, post},
 };
 
+use dotenvy::dotenv;
+
+use sqlx::postgres::PgPoolOptions;
+
 mod handlers;
 mod models;
+mod persistance;
 
 use handlers::*;
 
 #[tokio::main]
 async fn main() {
     pretty_env_logger::init();
-    dotenvy::dotenv().ok();
+    dotenv().ok();
 
     let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
@@ -24,11 +31,13 @@ async fn main() {
         .await
         .expect("Failed to connect to database");
 
-    let recs = sqlx::query("SELECT * FROM questions")
+    // TODO: Delete this query
+    let recs = sqlx::query!("SELECT * FROM questions")
         .fetch_all(&pool)
         .await
         .expect("Failed to fetch questions");
 
+    // TODO: Delete these log statements
     info!("********* Question Records *********");
     info!("{:?}", recs);
 
