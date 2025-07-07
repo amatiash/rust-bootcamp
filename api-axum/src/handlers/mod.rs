@@ -1,7 +1,7 @@
 mod handlers_inner;
 
 use crate::{AppState, models::*};
-use axum::{Json, extract::State, http::StatusCode, response::IntoResponse};
+use axum::{Json as JsonAxum, extract::State as AxumState, http::StatusCode, response::IntoResponse};
 
 impl IntoResponse for handlers_inner::HandlerError {
     fn into_response(self) -> axum::response::Response {
@@ -19,25 +19,25 @@ impl IntoResponse for handlers_inner::HandlerError {
 // ---- CRUD for Questions ----
 
 pub async fn create_question(
-    State(AppState { questions_dao, .. }): State<AppState>,
-    Json(question): Json<Question>,
+    AxumState(AppState { questions_dao, .. }): AxumState<AppState>,
+    JsonAxum(question): JsonAxum<Question>,
 ) -> Result<impl IntoResponse, impl IntoResponse> {
     handlers_inner::create_question(question, questions_dao.as_ref())
         .await
-        .map(Json)
+        .map(JsonAxum)
 }
 
 pub async fn read_questions(
-    State(AppState { questions_dao, .. }): State<AppState>,
+    AxumState(AppState { questions_dao, .. }): AxumState<AppState>,
 ) -> Result<impl IntoResponse, impl IntoResponse> {
     handlers_inner::read_questions(questions_dao.as_ref())
         .await
-        .map(Json)
+        .map(JsonAxum)
 }
 
 pub async fn delete_question(
-    State(AppState { questions_dao, .. }): State<AppState>,
-    Json(question_uuid): Json<QuestionId>,
+    AxumState(AppState { questions_dao, .. }): AxumState<AppState>,
+    JsonAxum(question_uuid): JsonAxum<QuestionId>,
 ) -> Result<impl IntoResponse, impl IntoResponse> {
     handlers_inner::delete_question(question_uuid, questions_dao.as_ref()).await
 }
@@ -45,26 +45,26 @@ pub async fn delete_question(
 // ---- CRUD for Answers ----
 
 pub async fn create_answer(
-    State(AppState { answers_dao, .. }): State<AppState>,
-    Json(answer): Json<Answer>,
+    AxumState(AppState { answers_dao, .. }): AxumState<AppState>,
+    JsonAxum(answer): JsonAxum<Answer>,
 ) -> Result<impl IntoResponse, impl IntoResponse> {
     handlers_inner::create_answer(answer, answers_dao.as_ref())
         .await
-        .map(Json)
+        .map(JsonAxum)
 }
 
 pub async fn read_answers(
-    State(AppState { answers_dao, .. }): State<AppState>,
-    Json(question_uuid): Json<QuestionId>,
+    AxumState(AppState { answers_dao, .. }): AxumState<AppState>,
+    JsonAxum(question_uuid): JsonAxum<QuestionId>,
 ) -> Result<impl IntoResponse, impl IntoResponse> {
     handlers_inner::read_answers(question_uuid, answers_dao.as_ref())
         .await
-        .map(Json)
+        .map(JsonAxum)
 }
 
 pub async fn delete_answer(
-    State(AppState { answers_dao, .. }): State<AppState>,
-    Json(answer_uuid): Json<AnswerId>,
+    AxumState(AppState { answers_dao, .. }): AxumState<AppState>,
+    JsonAxum(answer_uuid): JsonAxum<AnswerId>,
 ) -> Result<impl IntoResponse, impl IntoResponse> {
     handlers_inner::delete_answer(answer_uuid, answers_dao.as_ref()).await
 }
