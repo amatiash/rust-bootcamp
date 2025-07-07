@@ -1,6 +1,3 @@
-#[macro_use]
-extern crate log;
-
 extern crate pretty_env_logger;
 
 use axum::{
@@ -12,9 +9,14 @@ use dotenvy::dotenv;
 
 use sqlx::postgres::PgPoolOptions;
 
+use persistence::{
+    answers_dao::{AnswersDao, AnswersDaoImpl},
+    questions_dao::{QuestionsDao, QuestionsDaoImpl},
+};
+
 mod handlers;
 mod models;
-mod persistance;
+mod persistence;
 
 use handlers::*;
 
@@ -30,16 +32,6 @@ async fn main() {
         .connect(&database_url)
         .await
         .expect("Failed to connect to database");
-
-    // TODO: Delete this query
-    let recs = sqlx::query!("SELECT * FROM questions")
-        .fetch_all(&pool)
-        .await
-        .expect("Failed to fetch questions");
-
-    // TODO: Delete these log statements
-    info!("********* Question Records *********");
-    info!("{:?}", recs);
 
     let app = Router::new()
         .route("/question", post(create_question))
