@@ -54,6 +54,7 @@ mod unrecoverable_errors;
 mod variables;
 mod vectors;
 mod raw_pointers;
+mod unsafe_functions;
 
 #[tokio::main]
 async fn main() {
@@ -258,4 +259,7 @@ async fn main() {
     raw_pointers::immutable_raw_pointers();
     raw_pointers::mutable_raw_pointers();
     raw_pointers::multiple_pointers();
+    unsafe_functions::code();
+    unsafe_functions::unsafe_functions();
+    unsafe_functions::unsafe_methods();
 }
